@@ -50,6 +50,7 @@ body {
         margin-bottom: 20px;
       }
       .filter-checkbox {
+        width: 70%;
         margin-bottom: 20px;
         font-weight: 400;
         line-height: 20px;
@@ -71,7 +72,6 @@ body {
         }
       }
       .tickets-list {
-
         .list-btn {
           width: 100%;
           padding: 15px;
@@ -95,7 +95,7 @@ body {
             padding: 20px;
             box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
 
-            >* {
+            > * {
               padding: 0;
             }
             .ticket-header {
@@ -123,7 +123,6 @@ body {
               margin-bottom: 10px;
 
               .description-item {
-
                 .item-header {
                   color: rgb(160, 176, 185);
                   text-transform: uppercase;

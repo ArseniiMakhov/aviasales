@@ -1,21 +1,40 @@
 import React from 'react'
 import { Checkbox } from 'antd'
+import { connect } from 'react-redux'
 
+import { toggleAllFilters, toggleFilter } from '../../actions'
 import classes from '../../index.module.scss'
 
-export const FilterSteps = () => {
+const FilterSteps = ({ filters, allChecked, toggleAllFilters, toggleFilter }) => {
+  const elements = filters.map((el, index) => {
+    return (
+      <Checkbox
+        onChange={() => toggleFilter(el.name)}
+        key={index}
+        checked={el.checked}
+        className={classes['filter-checkbox']}
+      >
+        {el.label}
+      </Checkbox>
+    )
+  })
+
   return (
     <div className={classes['filter-aside']}>
       <h4 className={classes['filter-title']}>Количество пересадок</h4>
-      <Checkbox className={classes['filter-checkbox']}>Все</Checkbox>
-      <br />
-      <Checkbox className={classes['filter-checkbox']}>Без пересадок</Checkbox>
-      <br />
-      <Checkbox className={classes['filter-checkbox']}>1 пересадка</Checkbox>
-      <br />
-      <Checkbox className={classes['filter-checkbox']}>2 пересадки</Checkbox>
-      <br />
-      <Checkbox className={classes['filter-checkbox']}>3 пересадки</Checkbox>
+      <Checkbox onChange={toggleAllFilters} checked={allChecked} className={classes['filter-checkbox']}>
+        Все
+      </Checkbox>
+      {elements}
     </div>
   )
 }
+
+function mapStateToProps(state) {
+  return {
+    allChecked: state.allChecked,
+    filters: state.filters,
+  }
+}
+
+export default connect(mapStateToProps, { toggleAllFilters, toggleFilter })(FilterSteps)
