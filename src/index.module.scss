@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'OpenSans';
+  src:
+    local('OpenSans'),
+    url('./Fonts/OpenSans/static/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #f3f7fa;
+  font-family: 'OpenSans';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgb(74, 74, 74);
+}
+
+.app {
+  .app-header {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .app-main {
+    display: flex;
+    justify-content: center;
+
+    .filter-aside {
+      width: 230px;
+      height: 255px;
+      margin-right: 20px;
+      margin-bottom: 10px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+
+      .filter-title {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      .filter-checkbox {
+        margin-bottom: 20px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0;
+        font-size: 13px;
+      }
+    }
+    .container {
+      .filter {
+        margin-bottom: 20px;
+
+        .filter-item {
+          padding: 15px 20px;
+          font-family: 'OpenSans';
+          height: auto;
+          font-size: 12px;
+          text-transform: uppercase;
+          line-height: 20px;
+        }
+      }
+      .tickets-list {
+
+        .list-btn {
+          width: 100%;
+          padding: 15px;
+          height: auto;
+          font-family: Open Sans;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 20px;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+          margin-top: 10px;
+        }
+        .list-item {
+          border-block-end: none;
+
+          &:last-child {
+            border-block-end: none;
+          }
+          .ticket {
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+
+            >* {
+              padding: 0;
+            }
+            .ticket-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 20px;
+
+              .ticket-price {
+                color: rgb(33, 150, 243);
+                font-size: 24px;
+                line-height: 24px;
+                letter-spacing: 0px;
+              }
+              .ticket-logo {
+                width: 110px;
+                height: 36px;
+              }
+            }
+            .ticket-description {
+              display: flex;
+              justify-content: space-between;
+              font-family: 'OpenSans';
+              font-size: 12px;
+              margin-bottom: 10px;
+
+              .description-item {
+
+                .item-header {
+                  color: rgb(160, 176, 185);
+                  text-transform: uppercase;
+                  line-height: 18px;
+                }
+                .item-body {
+                  color: rgb(74, 74, 74);
+                  font-size: 14px;
+                  line-height: 21px;
+                  letter-spacing: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
