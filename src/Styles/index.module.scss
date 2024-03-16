@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: center;
 
-    .filter-aside {
+    .filter {
       width: 230px;
       height: 255px;
       margin-right: 20px;
@@ -59,10 +59,9 @@ body {
       }
     }
     .container {
-      .filter {
-        margin-bottom: 20px;
+      .sorter {
 
-        .filter-item {
+        .sorter-item {
           padding: 15px 20px;
           font-family: 'OpenSans';
           height: auto;
@@ -123,6 +122,8 @@ body {
               margin-bottom: 10px;
 
               .description-item {
+                width: 100px;
+
                 .item-header {
                   color: rgb(160, 176, 185);
                   text-transform: uppercase;
@@ -138,6 +139,13 @@ body {
             }
           }
         }
+      }
+      .alert {
+        margin-top: 12px;
+      }
+      .tickets-loader {
+        text-align: center;
+        margin-top: 12px;
       }
     }
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import classes from '../../index.module.scss'
+import classes from '../../Styles/index.module.scss'
 
 export const AppHeader = () => {
   return (

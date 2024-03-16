@@ -1,20 +1,40 @@
 import React from 'react'
-import { Radio } from 'antd'
+import { Checkbox } from 'antd'
+import { useDispatch, useSelector } from 'react-redux'
 
-import classes from '../../index.module.scss'
+import { toggleAllFilters, toggleFilter } from '../../Store/rootSlice'
+import classes from '../../Styles/index.module.scss'
 
 export const Filter = () => {
+  const dispatch = useDispatch()
+  const rootReducer = useSelector((state) => state.rootReducer)
+  const allChecked = rootReducer.allChecked
+  const filters = rootReducer.filters
+
+  const elements = filters.map((el, index) => {
+    return (
+      <Checkbox
+        onChange={() => dispatch(toggleFilter({ stops: el.stops }))}
+        key={index}
+        checked={el.checked}
+        className={classes['filter-checkbox']}
+      >
+        {el.label}
+      </Checkbox>
+    )
+  })
+
   return (
-    <Radio.Group className={classes.filter} defaultValue="a" buttonStyle="solid">
-      <Radio.Button className={classes['filter-item']} value="a">
-        Самый дешевый
-      </Radio.Button>
-      <Radio.Button className={classes['filter-item']} value="b">
-        Самый быстрый
-      </Radio.Button>
-      <Radio.Button className={classes['filter-item']} value="c">
-        Оптимальный
-      </Radio.Button>
-    </Radio.Group>
+    <div className={classes.filter}>
+      <h4 className={classes['filter-title']}>Количество пересадок</h4>
+      <Checkbox
+        onChange={() => dispatch(toggleAllFilters())}
+        checked={allChecked}
+        className={classes['filter-checkbox']}
+      >
+        Все
+      </Checkbox>
+      {elements}
+    </div>
   )
 }
