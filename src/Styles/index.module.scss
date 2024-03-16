@@ -36,6 +36,8 @@ body {
     justify-content: center;
 
     .filter {
+      display: flex;
+      flex-direction: column;
       width: 230px;
       height: 255px;
       margin-right: 20px;
@@ -50,7 +52,6 @@ body {
         margin-bottom: 20px;
       }
       .filter-checkbox {
-        width: 70%;
         margin-bottom: 20px;
         font-weight: 400;
         line-height: 20px;
@@ -60,7 +61,6 @@ body {
     }
     .container {
       .sorter {
-
         .sorter-item {
           padding: 15px 20px;
           font-family: 'OpenSans';
@@ -81,7 +81,7 @@ body {
           line-height: 20px;
           letter-spacing: 0.5px;
           text-transform: uppercase;
-          margin-top: 10px;
+          margin: 10px 0 50px 0;
         }
         .list-item {
           border-block-end: none;
@@ -145,7 +145,47 @@ body {
       }
       .tickets-loader {
         text-align: center;
-        margin-top: 12px;
+        margin: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  body {
+    max-width: 455px;
+  }
+
+  .app {
+    .app-header {
+      padding: 20px;
+    }
+    .app-main {
+      display: block;
+
+      .filter {
+        width: 100%;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  body {
+    padding: 5px;
+    text-align: center;
+  }
+
+  .app {
+    .app-main {
+      .container {
+        .sorter {
+          .sorter-item {
+            padding: 5px 10px;
+            font-size: 10px;
+          }
+        }
       }
     }
   }
